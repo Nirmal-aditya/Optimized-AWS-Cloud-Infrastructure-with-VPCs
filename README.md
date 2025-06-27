@@ -1,32 +1,21 @@
-# AWS Secure Three-Tier Architecture
+![vpc-example-private-subnets](https://github.com/user-attachments/assets/ab4a4f3c-d5fe-40c6-9fc1-12e859886e2a)
 
-![Architecture Diagram]([image.png](https://docs.aws.amazon.com/images/vpc/latest/userguide/images/vpc-example-private-subnets.png))  
-*Highly Available Cloud Infrastructure with Isolated Networking*
+AWS VPC with Private Subnets Implementation
 
-## 📌 Features
-- **Multi-AZ Deployment**: Fault tolerance across availability zones
-- **Public/Private Subnets**: Secure separation of resources
-- **Application Load Balancer**: Distributes traffic to backend servers
-- **NAT Gateways**: Outbound internet for private subnets
-- **S3 Gateway Endpoint**: Private S3 access without internet
-- **Security Groups**: Instance-level firewall rules
+Project Overview
+A secure cloud networking implementation using AWS VPC with public and private subnets across multiple Availability Zones, featuring NAT gateways, Auto Scaling, and Load Balancing.
 
-## 🛠️ Tech Stack
-| AWS Service       | Purpose                          |
-|-------------------|----------------------------------|
-| VPC              | Isolated network environment     |
-| EC2              | Backend servers                  |
-| ALB              | Traffic distribution & SSL termination |
-| NAT Gateway      | Private subnet internet access   |
-| S3 Gateway       | Secure internal storage access   |
+Key Components
+Component	Purpose	Key Features
+VPC	Virtual network foundation	
+Public Subnets	Internet-facing resources	Route to Internet Gateway
+Private Subnets	Protected application layer	NAT gateway access only
+NAT Gateways	Outbound internet for private instances	High-availability deployment
+Application Load Balancer	Traffic distribution	HTTPS termination, path routing
+Auto Scaling Group	Application servers	Self-healing, scale policies
+Security Groups	Instance-level firewall	Least-privilege rules
 
-## 🔒 Security Implementation
-```hcl
-# Example Security Group (Terraform)
-resource "aws_security_group" "app_server" {
-  ingress {
-    from_port   = 80
-    to_port     = 80
-    security_groups = [aws_security_group.alb.id] # Only allow ALB
-  }
-}
+Technical Stack
+AWS Services: VPC, EC2, ALB, NAT Gateway, Auto Scaling
+
+Security: Security Groups, Network ACLs
