@@ -28,15 +28,15 @@
 ---
 
 ## ⚙️ Setup & Installation Guide
-Step 1: Clone the repository
 git clone https://github.com/Nirmal-aditya/Optimized-AWS-Cloud-Infrastructure-with-VPCs.git
 
-Step 2: Navigate to the project directory
-cd Optimized-AWS-Cloud-Infrastructure-with-VPCs
+Navigate to the project directory: cd Optimized-AWS-Cloud-Infrastructure-with-VPCs
 
-Step 3: Review CloudFormation/Terraform templates or Cloud setup scripts
-Step 4: Deploy the infrastructure using AWS CLI, CloudFormation, or your IaC tool of choice
-Step 5: Verify resources like VPC, subnets, NAT gateways, ALB, and Auto Scaling groups are up and running in AWS Console
+Review CloudFormation/Terraform templates or Cloud setup scripts
+
+Deploy the infrastructure using AWS CLI, CloudFormation, or your IaC tool of choice
+
+Verify resources like VPC, subnets, NAT gateways, ALB, and Auto Scaling groups are up and running in AWS Console
 
 
 ---
